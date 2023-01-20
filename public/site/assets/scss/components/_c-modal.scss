@@ -1,0 +1,36 @@
+.c-modal {
+	&__content {
+		border: none;
+	}
+
+	&__header,
+	&__body,
+	&__footer {
+		padding: map-get($g-gaps, normal);
+	}
+
+	&__header {
+		border-bottom: 1px solid var(--color-gray-light);
+	}
+
+	&__title {
+		font-size: $g-font-size-18;
+		@include font-medium;
+	}
+
+	&__close {
+		opacity: 1;
+	}
+
+	&__body {
+		color: var(--color-gray-dark);
+	}
+
+	&__footer {
+		border-top: none;
+
+		button {
+			margin: 0;
+		}
+	}
+}

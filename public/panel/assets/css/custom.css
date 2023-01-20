@@ -1,0 +1,12 @@
+.mask {
+    width: 100%;
+    height: calc(100% - 100px);
+    position: absolute;
+    z-index: 9999999;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    transition: all ease 0.4s;
+}

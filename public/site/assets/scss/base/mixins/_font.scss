@@ -1,0 +1,21 @@
+//////////////////////////////////////////
+
+@mixin font-light {
+	font-family: Gilroy-Light;
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-regular {
+	font-family: Gilroy-Regular;
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-medium {
+	font-family: Gilroy-Medium;
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+}
+
+//////////////////////////////////////////

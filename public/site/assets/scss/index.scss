@@ -1,0 +1,126 @@
+//base styles
+@import '../scss/base/mixins/font';
+
+@import '../scss/base/base';
+
+@import '../scss/base/breakpoints';
+
+@import '../scss/base/fonts';
+
+@import '../scss/base/functions';
+
+@import '../scss/base/variables';
+
+//component styles
+@import '../scss/components/c-button';
+
+@import '../scss/components/c-checkbox';
+
+@import '../scss/components/c-go-top';
+
+@import '../scss/components/c-hamburger';
+
+@import '../scss/components/c-icon';
+
+@import '../scss/components/c-input';
+
+@import '../scss/components/c-mobile-menu';
+
+@import '../scss/components/c-section';
+
+@import '../scss/components/c-title';
+
+@import '../scss/components/c-coming';
+
+@import '../scss/components/c-auth';
+
+@import '../scss/components/c-tz-card';
+
+@import '../scss/components/c-adv';
+
+@import '../scss/components/c-jumbotron';
+
+@import '../scss/components/c-finder';
+
+@import '../scss/components/c-featured';
+
+@import '../scss/components/c-showcase';
+
+@import '../scss/components/c-sticky-bar';
+
+@import '../scss/components/c-breadcrumb';
+
+@import '../scss/components/c-product';
+
+@import '../scss/components/c-map';
+
+@import '../scss/components/c-filter';
+
+@import '../scss/components/c-light-tab';
+
+@import '../scss/components/c-toggle';
+
+@import '../scss/components/c-air-tab';
+
+@import '../scss/components/c-divider';
+
+@import '../scss/components/c-checklist';
+
+@import '../scss/components/c-calc';
+
+@import '../scss/components/c-accordion';
+
+@import '../scss/components/c-feedback';
+
+@import '../scss/components/c-msg';
+
+@import '../scss/components/c-iconbox';
+
+@import '../scss/components/c-h-card';
+
+@import '../scss/components/c-badge';
+
+@import '../scss/components/c-cover';
+
+@import '../scss/components/c-error';
+
+@import '../scss/components/c-cookies';
+
+@import '../scss/components/c-upload';
+
+@import '../scss/components/c-modal';
+
+@import '../scss/components/c-empty';
+
+@import '../scss/components/c-pagi';
+
+@import '../scss/components/c-widget';
+
+//layout styles
+@import '../scss/layout/l-container';
+
+@import '../scss/layout/l-navbar';
+
+@import '../scss/layout/l-wrapper';
+
+@import '../scss/layout/l-footer';
+
+//libs styles
+@import '../scss/libs/custom-owl';
+
+@import '../scss/libs/custom-slick-slider';
+
+@import '../scss/libs/c-select2';
+
+@import '../scss/libs/c-slider-owl';
+
+@import '../scss/libs/summernote';
+
+@import '../scss/libs/image-uploader';
+
+//utilities styles
+@import '../scss/utilities/margin';
+
+@import '../scss/utilities/other';
+
+@import '../scss/utilities/padding';

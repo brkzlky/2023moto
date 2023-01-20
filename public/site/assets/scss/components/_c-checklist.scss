@@ -1,0 +1,32 @@
+.c-checklist {
+	border-radius: $g-border-radius-4;
+	background-color: var(--color-white-dark);
+	padding: map-get($g-gaps, small) map-get($g-gaps, normal);
+
+	&__body {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		margin-top: map-get($g-gaps, small);
+		margin-inline-end: map-get($g-gaps, medium);
+		width: calc(20% - 2rem);
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	.c-checklist {
+		&__item {
+			width: calc(33.3% - 2rem);
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.c-checklist {
+		&__item {
+			width: calc(50% - 2rem);
+		}
+	}
+}

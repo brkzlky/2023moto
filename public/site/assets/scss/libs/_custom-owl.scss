@@ -1,0 +1,53 @@
+// .c-custom-owl {
+// 	.owl-stage-outer {
+// 	}
+// }
+// .custom-dots,
+// .testimonils-custom-dots,
+// .blog-custom-dots {
+// 	.owl-dot {
+// 		border: none;
+// 		margin: 5px !important;
+// 		background-color: var(--color-gray-light) !important;
+// 		opacity: 0.4 !important;
+// 		width: 10px;
+// 		height: 10px;
+// 		border-radius: 20px;
+// 		padding: 0;
+
+// 		&.active {
+// 			opacity: 1 !important;
+// 		}
+
+// 		&:focus {
+// 			outline: none;
+// 		}
+// 	}
+// }
+
+// @include media-breakpoint-up(md) {
+// 	.c-custom-owl {
+// 		.owl-stage-outer {
+// 			padding: 25px 0 45px 0;
+// 			.owl-stage {
+// 				padding-bottom: 55px;
+
+// 				.item {
+// 					&:hover {
+// 						position: absolute;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// @include media-breakpoint-down(lg) {
+// 	.owl-carousel {
+// 		&.c-custom-owl {
+// 			.owl-dots {
+// 				right: 11%;
+// 			}
+// 		}
+// 	}
+// }

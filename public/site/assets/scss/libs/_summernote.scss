@@ -1,0 +1,48 @@
+.summernote {
+	@include font-regular;
+
+	& ~ .note-editor {
+		&.note-frame {
+			border: 1px solid var(--color-gray-light);
+
+			.note-toolbar {
+				background-color: var(--color-white-dark);
+				border-color: var(--color-gray-light);
+
+				.note-btn-group {
+					.note-btn {
+						.note-icon-caret {
+							display: none;
+						}
+
+						[class*='note-icon']::before,
+						[class^='note-icon']::before {
+							color: var(--var-color-black);
+						}
+					}
+				}
+			}
+
+			.note-editing-area {
+				@include font-regular;
+			}
+
+			.note-status-output {
+				background-color: var(--color-white-dark);
+				border-color: var(--color-gray-light);
+				@include font-light;
+				color: var(--color-black);
+				padding: 5px 10px;
+				height: unset;
+			}
+
+			.note-statusbar {
+				border: none;
+			}
+
+			.note-resizebar {
+				display: none;
+			}
+		}
+	}
+}

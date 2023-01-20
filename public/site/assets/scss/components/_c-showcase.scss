@@ -1,0 +1,107 @@
+.c-showcase {
+	&-card {
+		&__body {
+			border-radius: $g-border-radius-4;
+			height: 210px;
+			position: relative;
+
+			&:after {
+				content: '';
+				border-radius: $g-border-radius-8;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				inset-inline-start: 0;
+				bottom: 0;
+				background: linear-gradient(180deg, rgba(0, 0, 0, 0) -82.25%, rgba(0, 0, 0, 0) 50.76%, rgba(0, 0, 0, 0.75) 100%);
+			}
+		}
+
+		&__img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: $g-border-radius-4;
+		}
+
+		&__logo {
+			max-width: 80px;
+			position: absolute;
+			inset-inline-end: 20px;
+			bottom: 20px;
+			z-index: 999;
+
+			img {
+				object-fit: contain;
+				height: 40px;
+			}
+		}
+
+		&__title {
+			font-size: $g-font-size-13;
+			color: var(--color-gray);
+			@include font-light;
+			margin-bottom: map-get($g-gaps, 2xsmall);
+		}
+
+		&__location {
+			font-size: $g-font-size-13;
+			color: var(--color-black);
+			@include font-light;
+		}
+
+		&__price {
+			font-size: $g-font-size-20;
+			color: var(--color-black);
+		}
+
+		&__footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			line-height: 1;
+			margin-top: map-get($g-gaps, small);
+
+			&-left {
+				display: flex;
+				flex-direction: column;
+				margin-inline-end: map-get($g-gaps, small);
+			}
+		}
+
+		&__bottom {
+			margin-top: map-get($g-gaps, small);
+			padding-top: map-get($g-gaps, small);
+			border-top: 1px solid var(--color-white-dark);
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			&-left {
+				width: 85%;
+				line-height: 1.4;
+				font-size: $g-font-size-13;
+				@include font-light;
+				color: var(--color-black);
+				margin-inline-end: map-get($g-gaps, small);
+				display: flex;
+				flex-direction: column;
+			}
+
+			&-right {
+				width: 15%;
+				padding: 8px;
+				background-color: var(--color-white-dark);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: $g-border-radius-4;
+
+				img {
+					width: 30px !important;
+					height: 30px !important;
+				}
+			}
+		}
+	}
+}

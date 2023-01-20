@@ -1,0 +1,9 @@
+.c-breadcrumb {
+	color: var(--color-gray-dark);
+	@include font-regular;
+	font-size: $g-font-size-12;
+
+	&--has-mb {
+		margin-bottom: map-get($g-gaps, xsmall);
+	}
+}

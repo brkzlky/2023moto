@@ -1,0 +1,271 @@
+.c-h-card {
+	display: flex;
+	padding-bottom: map-get($g-gaps, small);
+
+	&:not(:first-child) {
+		border-top: 1px solid var(--color-gray-light);
+		padding-top: map-get($g-gaps, small);
+	}
+
+	&__img {
+		flex: 1;
+		margin-inline-end: map-get($g-gaps, small);
+
+		img {
+			max-width: 185px;
+			border-radius: $g-border-radius-4;
+		}
+	}
+
+	&__content {
+		margin-inline-end: map-get($g-gaps, small);
+		flex: 3;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: map-get($g-gaps, xsmall) 0;
+
+		&-footer {
+			margin-top: 10px;
+			display: flex;
+			justify-content: flex-start;
+
+			&--flex-end {
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	&__title {
+		font-size: $g-font-size-14;
+		line-height: 1;
+		color: var(--color-black);
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+
+		&--uppercase {
+			text-transform: uppercase;
+		}
+	}
+
+	&__model,
+	&__loc {
+		font-size: $g-font-size-12;
+		color: var(--color-gray-dark);
+		margin-top: 12px;
+		line-height: 1;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	&__info {
+		&:not(:first-child) {
+			margin-inline-start: map-get($g-gaps, normal);
+		}
+
+		svg {
+			color: var(--color-gray-light);
+			margin-inline-end: map-get($g-gaps, xsmall);
+		}
+
+		span {
+			font-size: $g-font-size-12;
+			color: var(--color-black);
+		}
+	}
+
+	&__action {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&--flex-end {
+			justify-content: flex-end;
+		}
+
+		&-icon {
+			color: var(--color-black);
+			margin-inline-start: map-get($g-gaps, small);
+			margin-inline-end: map-get($g-gaps, small);
+
+			&--desktop {
+				display: block;
+			}
+
+			&--mobile {
+				display: none;
+			}
+		}
+	}
+
+	&__price {
+		line-height: 1;
+
+		&--desktop {
+			display: block;
+		}
+
+		&--mobile {
+			display: none;
+		}
+
+		&--14 {
+			font-size: $g-font-size-14;
+			margin-top: 12px;
+		}
+	}
+
+	&__dropdown {
+		margin-inline-start: map-get($g-gaps, small);
+		margin-inline-end: map-get($g-gaps, small);
+		position: relative;
+		cursor: pointer;
+
+		svg {
+			transform: rotate(90deg);
+		}
+
+		&.dropdown-toggle {
+			&.is-open {
+				.dropdown-menu {
+					display: block;
+					visibility: visible;
+				}
+			}
+
+			&::after {
+				display: none;
+			}
+
+			.dropdown-menu {
+				top: 30px;
+
+				&--more {
+					font-size: $g-font-size-14;
+					box-shadow: $-g-dropdown-shadow;
+					border: none;
+					padding: map-get($g-gaps, xsmall);
+					border-radius: $g-border-radius-8;
+					visibility: hidden;
+					display: block;
+					inset-inline-end: 0;
+
+					&__body {
+						display: flex;
+						flex-direction: column;
+					}
+
+					&-item {
+						border-radius: $g-border-radius-4;
+						font-size: 13px;
+						padding: 12px;
+
+						&:hover {
+							background-color: var(--color-white-dark);
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&--removed {
+		font-size: $g-font-size-14;
+		justify-content: space-between;
+		color: var(--color-gray);
+		padding-top: map-get($g-gaps, normal) !important;
+		padding-bottom: map-get($g-gaps, normal) !important;
+
+		.c-button {
+			padding-top: 0;
+			padding-bottom: 0;
+			font-size: $g-font-size-14;
+			text-decoration: underline !important;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.c-h-card {
+		&__img {
+			margin-inline-end: map-get($g-gaps, xsmall);
+
+			img {
+				max-width: 125px;
+				height: 110px;
+				object-fit: cover;
+			}
+		}
+
+		&__content {
+			margin-inline-end: map-get($g-gaps, xsmall);
+		}
+
+		&__model,
+		&__loc {
+			margin-top: 10px;
+		}
+
+		&__price {
+			&--desktop {
+				display: none;
+			}
+
+			&--mobile {
+				display: block;
+				font-size: $g-font-size-14;
+				margin-top: 10px;
+			}
+
+			&--14 {
+				margin-top: 10px;
+			}
+		}
+
+		&__info {
+			&:not(:first-child) {
+				margin-inline-start: map-get($g-gaps, small);
+			}
+
+			svg {
+				margin-inline-end: map-get($g-gaps, 2xsmall);
+			}
+		}
+
+		&__action {
+			&-icon {
+				&--desktop {
+					display: none;
+				}
+
+				&--mobile {
+					display: block;
+
+					&:last-child {
+						margin-inline-end: 0;
+					}
+				}
+			}
+		}
+
+		&__dropdown {
+			margin-inline-end: map-get($g-gaps, xsmall);
+			margin-inline-start: map-get($g-gaps, xsmall);
+		}
+	}
+}
+
+@media screen and (max-width: 390px) {
+	.c-h-card {
+		&__img {
+			img {
+				max-width: 115px;
+			}
+		}
+	}
+}

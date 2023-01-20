@@ -1,0 +1,121 @@
+@import './functions';
+
+//
+// Variables
+// -------------------------
+
+//
+// Font Sizing
+// -------------------------
+$g-font-size-root: null !default;
+$g-font-size-base: 1rem !default;
+
+$g-font-size-15: $g-font-size-base - px-to-rem(1px) !default; //15px
+$g-font-size-14: $g-font-size-base - px-to-rem(2px) !default; //14px
+$g-font-size-13: $g-font-size-base - px-to-rem(3px) !default; //13px
+$g-font-size-12: $g-font-size-base - px-to-rem(4px) !default; //12px
+$g-font-size-11: $g-font-size-base - px-to-rem(5px) !default; //11px
+$g-font-size-10: $g-font-size-base - px-to-rem(6px) !default; //10px
+$g-font-size-9: $g-font-size-base - px-to-rem(7px) !default; //9px
+$g-font-size-17: $g-font-size-base + px-to-rem(1px) !default; //17px
+$g-font-size-18: $g-font-size-base + px-to-rem(2px) !default; //18px
+$g-font-size-20: $g-font-size-base + px-to-rem(4px) !default; //20px
+$g-font-size-22: $g-font-size-base + px-to-rem(6px) !default; //22px
+$g-font-size-24: $g-font-size-base + px-to-rem(8px) !default; //24px
+$g-font-size-28: $g-font-size-base + px-to-rem(12px) !default; //28px
+$g-font-size-30: $g-font-size-base + px-to-rem(14px) !default; //30px
+
+//
+// Typography
+// -------------------------
+$g-font-size-h1: px-to-rem(48px) !important;
+$g-font-size-h2: px-to-rem(36px) !important;
+$g-font-size-h3: px-to-rem(24px) !important;
+$g-font-size-h4: px-to-rem(18px) !important;
+$g-font-size-h5: px-to-rem(16px) !important;
+$g-font-size-h6: px-to-rem(14px) !important;
+
+//
+// Spacing
+// -------------------------
+
+// 2xsmall: 4px
+// xsmall: 8px
+// small:  16px
+// normal: 24px
+// medium: 32px
+// large:   40px
+// xlarge:  48px
+// 2xlarge: 60px
+// 3xlarge: 72px
+// 4xlarge: 96px
+
+$g-base-gap: 1.5rem !default;
+$g-gaps: (
+	normal: $g-base-gap,
+	small: (
+		$g-base-gap / 1.5,
+	),
+	xsmall: (
+		$g-base-gap / 3,
+	),
+	2xsmall: (
+		$g-base-gap / 6,
+	),
+	medium: (
+		$g-base-gap * (4 / 3),
+	),
+	large: (
+		$g-base-gap * (5 / 3),
+	),
+	xlarge: (
+		$g-base-gap * 2,
+	),
+	2xlarge: (
+		$g-base-gap * 2.5,
+	),
+	3xlarge: (
+		$g-base-gap * 3,
+	),
+	4xlarge: (
+		$g-base-gap * 4,
+	),
+);
+
+// Global border-radius
+// -------------------------
+$g-border-radius: 2px !default;
+$g-border-radius-4: 4px !default;
+$g-border-radius-6: 6px !default;
+$g-border-radius-8: 8px !default;
+$g-border-radius-16: 16px !default;
+
+//Global transition
+// -------------------------
+$g-transition: ease-in all 0.2s;
+
+//Dropdown shadow
+$-g-dropdown-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+//
+// Container Max Widths
+//
+$container-max-widths: (
+	md: 830px,
+	lg: 1160px,
+	xl: 1170px,
+	xxl: 1470px,
+);
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1600px,
+) !default;
+
+$enable-grid-classes: true !default;
+$grid-columns: 12 !default;
+$grid-gutter-width: 30px !default;
+$grid-row-columns: 6 !default;

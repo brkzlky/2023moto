@@ -1,0 +1,145 @@
+.image-uploader {
+	border: none !important;
+	min-height: unset !important;
+
+	.uploaded {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 0 !important;
+
+		&-image {
+			width: 110px !important;
+			height: 101px !important;
+			padding-bottom: 0 !important;
+			margin: map-get($g-gaps, 2xsmall) !important;
+
+			img {
+				border-radius: $g-border-radius-4;
+			}
+
+			.delete-image {
+				background-color: rgba(34, 34, 34, 0.3) !important;
+				backdrop-filter: blur(60px);
+				width: 22px;
+				height: 22px;
+				padding: 0 !important;
+				top: 5px !important;
+				inset-inline-end: 5px !important;
+				right: unset;
+
+				.material-icons {
+					display: none;
+				}
+
+				&:after {
+					content: '';
+					background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.64664 3.97818L7.85424 0.770579C7.92632 0.686406 7.96399 0.578133 7.95971 0.467395C7.95543 0.356658 7.90953 0.251613 7.83117 0.173251C7.75281 0.0948896 7.64776 0.0489832 7.53702 0.0447059C7.42629 0.0404285 7.31801 0.0780954 7.23384 0.150179L4.02624 3.35778L0.818639 0.145779C0.734466 0.0736953 0.626192 0.0360289 0.515455 0.0403062C0.404717 0.0445835 0.299672 0.0904895 0.221311 0.168851C0.142949 0.247213 0.0970426 0.352258 0.0927653 0.462995C0.088488 0.573733 0.126155 0.682006 0.198239 0.766179L3.40584 3.97818L0.193838 7.18578C0.147778 7.22522 0.110369 7.27377 0.0839592 7.32835C0.057549 7.38294 0.0427075 7.4424 0.0403669 7.503C0.0380264 7.56359 0.048237 7.62402 0.0703578 7.68048C0.0924786 7.73695 0.126032 7.78823 0.168912 7.83111C0.211792 7.87399 0.263073 7.90754 0.319536 7.92966C0.375999 7.95178 0.436426 7.96199 0.497022 7.95965C0.557618 7.95731 0.617077 7.94247 0.671665 7.91606C0.726254 7.88965 0.774794 7.85224 0.814238 7.80618L4.02624 4.59858L7.23384 7.80618C7.31801 7.87826 7.42629 7.91593 7.53702 7.91165C7.64776 7.90738 7.75281 7.86147 7.83117 7.78311C7.90953 7.70475 7.95543 7.5997 7.95971 7.48896C7.96399 7.37823 7.92632 7.26995 7.85424 7.18578L4.64664 3.97818Z' fill='white'/%3E%3C/svg%3E%0A");
+					background-repeat: no-repeat;
+					width: 10px;
+					height: 10px;
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+		}
+	}
+
+	.upload-text {
+		display: none !important;
+	}
+
+	&-btn {
+		color: var(--color-gray-dark);
+		border: 1px dashed var(--color-gray-light);
+		padding: 10px map-get($g-gaps, small);
+		width: fit-content;
+		font-size: $g-font-size-13;
+		@include font-regular;
+		border-radius: $g-border-radius-8;
+		height: 80px;
+		width: 110px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0.5rem 0.5rem 0.5rem 0;
+		cursor: pointer;
+		transition: ease-in-out border 0.2s;
+
+		&:hover {
+			border: 1px solid var(--color-black);
+			transition: ease-in-out border 0.2s;
+		}
+	}
+
+	&-icon {
+		margin-bottom: map-get($g-gaps, small);
+	}
+}
+.listing-img-uploader {
+	margin-bottom: map-get($g-gaps, large);
+}
+
+.profile-img-uploader,
+.background-img-uploader {
+	margin-top: -30px;
+
+	.uploaded {
+		padding-inline-start: 12px !important;
+	}
+	.image-uploader {
+		margin-bottom: map-get($g-gaps, 2xsmall);
+	}
+}
+
+.background-img-uploader {
+	.image-uploader {
+		.uploaded {
+			.uploaded-image {
+				width: calc(100% - 110px - 16px) !important;
+			}
+		}
+	}
+}
+
+.dragElemThumbnail {
+	opacity: 0.6 !important;
+	transition: ease-in-out opacity 0.2s;
+}
+
+@include media-breakpoint-down(md) {
+	.image-uploader {
+		&-btn {
+			width: calc(25% - 8px) !important;
+			margin: 0.25rem !important;
+		}
+		.uploaded {
+			&-image {
+				width: calc(25% - 8px) !important;
+				.delete-image {
+					display: block !important;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.image-uploader {
+		&-btn {
+			width: calc(33.3% - 8px) !important;
+			margin: 0.25rem !important;
+		}
+		.uploaded {
+			&-image {
+				width: calc(33.3% - 8px) !important;
+				.delete-image {
+					display: block !important;
+				}
+			}
+		}
+	}
+}

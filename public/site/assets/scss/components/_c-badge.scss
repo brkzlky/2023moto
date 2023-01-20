@@ -1,0 +1,38 @@
+.c-badge {
+	width: fit-content;
+	padding: map-get($g-gaps, small);
+	border-radius: $g-border-radius-4;
+	display: flex;
+	justify-content: space-between;
+
+	&--gray {
+		background-color: var(--color-white-dark);
+	}
+
+	&--icon-black {
+		svg {
+			color: var(--color-black) !important;
+		}
+	}
+
+	svg {
+		color: var(--color-gray-dark);
+		margin-inline-end: map-get($g-gaps, small);
+	}
+
+	p {
+		margin-bottom: 0;
+		font-size: $g-font-size-12;
+		color: var(--color-gray-dark);
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.c-badge {
+		padding: 12px;
+
+		svg {
+			margin-inline-end: 12px;
+		}
+	}
+}

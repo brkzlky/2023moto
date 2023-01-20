@@ -1,0 +1,70 @@
+.c-error {
+	height: 100vh;
+	width: 100%;
+	background-image: url(../images/error-bg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+
+	.container,
+	.row {
+		height: 100%;
+	}
+
+	&__head {
+		margin-top: 20px;
+		position: absolute;
+		z-index: 999;
+		top: 0;
+	}
+
+	&__overlay {
+		background-color: rgba(0, 0, 0, 0.2);
+		backdrop-filter: blur(12px);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__box {
+		position: relative;
+		height: 100%;
+		z-index: 99;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		flex-direction: column;
+		text-align: center;
+	}
+
+	&__title {
+		color: var(--color-white);
+		font-size: 42px !important;
+		margin-bottom: map-get($g-gaps, normal);
+		@include font-regular;
+	}
+
+	&__content {
+		color: var(--color-gray-light);
+		font-size: 20px !important;
+		margin-bottom: map-get($g-gaps, medium);
+		@include font-light;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.c-error {
+		&__title {
+			font-size: 32px !important;
+			margin-bottom: map-get($g-gaps, small);
+		}
+
+		&__content {
+			font-size: 16px !important;
+			margin-bottom: map-get($g-gaps, small);
+			@include font-light;
+		}
+	}
+}

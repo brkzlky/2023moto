@@ -1,0 +1,144 @@
+@include media-breakpoint-up(lg) {
+	.c-mobile-menu {
+		display: none;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	body {
+		&.menu-isOpen {
+			overflow: hidden;
+
+			.c-mobile-menu {
+				transition: ease-in-out left 0.4s, ease-in-out right 0.4s;
+				inset-inline-start: 0;
+			}
+
+			.c-go-top {
+				display: none !important;
+			}
+		}
+	}
+
+	.c-mobile-menu {
+		background-color: var(--color-white);
+		transition: ease-in-out left 0.4s, ease-in-out right 0.4s;
+		inset-inline-start: -100%;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: 99999999;
+		top: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		@include font-regular;
+
+		&__header {
+			padding: 0 12px;
+			height: 63px;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 1px solid var(--color-border);
+
+			&-l {
+				svg {
+					margin-inline-end: map-get($g-gaps, xsmall);
+				}
+			}
+
+			&-r {
+				display: flex;
+				justify-content: flex-end;
+				height: 100%;
+				align-items: center;
+
+				svg {
+					margin-inline-end: 4px;
+				}
+			}
+		}
+
+		&__list {
+			list-style: none;
+			padding-inline-start: 0;
+			width: 100%;
+			margin-bottom: 0;
+			height: calc(100% - 63px - 74px);
+			overflow-x: hidden;
+			overflow-y: auto;
+
+			&::-webkit-scrollbar {
+				width: 3px;
+				border-radius: 3px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background: var(--color-gray);
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: var(--color-black-light);
+			}
+
+			&--main {
+				padding: map-get($g-gaps, medium) 12px;
+			}
+
+			&-item {
+				padding: 10px 0;
+				text-transform: uppercase;
+				font-size: $g-font-size-14;
+				@include font-regular;
+
+				// mobile menu accordion
+				// &.has-sub {
+				// 	position: relative;
+
+				// 	&:after {
+				// 		content: '';
+				// 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E");
+				// 		background-repeat: no-repeat;
+				// 		background-size: contain;
+				// 		background-position: center;
+				// 		position: absolute;
+				// 		right: 13px;
+				// 		top: 15px;
+				// 		transition: ease transform 0.2s;
+				// 		transform: rotate(0deg);
+
+				// 		width: 10px;
+				// 		height: 10px;
+				// 	}
+
+				// 	&.active {
+				// 		&:after {
+				// 			transition: ease transform 0.2s;
+				// 			transform: rotate(-180deg);
+				// 		}
+				// 	}
+				// }
+				// &-sub {
+				// 	display: none;
+				// 	list-style: none;
+				// 	padding-left: map-get($g-gaps, normal);
+
+				// 	li {
+				// 		margin-top: map-get($g-gaps, xsmall);
+				// 	}
+				// }
+
+				// &.show {
+				// 	> .c-mobile-menu__list--inner {
+				// 		display: block;
+				// 	}
+				// }
+			}
+		}
+
+		&__footer {
+			padding: 12px;
+		}
+	}
+}

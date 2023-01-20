@@ -1,0 +1,12 @@
+.c-divider {
+	background-color: var(--color-gray-light);
+	opacity: 1;
+
+	&--m-md {
+		margin: map-get($g-gaps, medium) 0;
+	}
+
+	&--mb-md {
+		margin-bottom: map-get($g-gaps, medium);
+	}
+}

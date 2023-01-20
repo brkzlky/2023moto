@@ -1,0 +1,140 @@
+$air-form-gap: map-get($g-gaps, xsmall); //8px
+
+.c-air-tab {
+	&__list {
+		overflow-y: auto;
+		flex-wrap: nowrap;
+	}
+
+	&__item {
+		margin-bottom: map-get($g-gaps, small);
+
+		padding-left: 8px;
+		padding-right: 8px;
+
+		&:first-child {
+			padding-right: 8px;
+			padding-left: 12px;
+		}
+
+		&:nth-child(4n) {
+			padding-right: 12px;
+			padding-left: 8px;
+		}
+	}
+
+	&__card {
+		padding: map-get($g-gaps, small);
+		border: 1px solid var(--color-gray-light);
+		border-radius: $g-border-radius-6;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		&.active {
+			border: 1px solid var(--color-black) !important;
+		}
+	}
+
+	&__img {
+		margin-inline-end: map-get($g-gaps, small);
+
+		img {
+			width: 70px;
+			border-radius: $g-border-radius-4;
+		}
+	}
+
+	&__content {
+		font-size: $g-font-size-14;
+		color: var(--color-black);
+	}
+
+	&__pane {
+		border-top: 1px solid var(--color-gray-light);
+		padding: map-get($g-gaps, medium) 0;
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		margin-inline-start: -($air-form-gap);
+		margin-inline-end: -($air-form-gap);
+
+		&-col {
+			width: 100%;
+			padding-inline-start: $air-form-gap;
+			padding-inline-end: $air-form-gap;
+			margin-bottom: map-get($g-gaps, small);
+		}
+
+		&-footer {
+			display: flex;
+			justify-content: flex-end;
+
+			.c-button {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.c-air-tab {
+		&__list {
+			flex-wrap: wrap;
+			padding-bottom: 16px;
+		}
+
+		&__form {
+			&-col {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.c-air-tab {
+		&__form {
+			&-col {
+				width: 25%;
+			}
+
+			&-footer {
+				.c-button {
+					width: calc(25% - #{$air-form-gap} * 2);
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.c-air-tab {
+		&__card {
+			box-shadow: none;
+			transition: ease-in-out all 0.2s;
+
+			&:hover {
+				border: 1px solid transparent;
+				box-shadow: 0px 15px 21.1726px rgba(0, 0, 0, 0.0425185), 0px 16.618px 10.8017px rgba(0, 0, 0, 0.035), 0px 6.77032px 5.41625px rgba(0, 0, 0, 0.0274815),
+					0px 1.53871px 2.6158px rgba(0, 0, 0, 0.0168519);
+				transition: ease-in-out all 0.2s;
+			}
+		}
+
+		&__form {
+			&-col {
+				width: 20%;
+			}
+
+			&-footer {
+				.c-button {
+					width: calc(20% - #{$air-form-gap} * 2);
+				}
+			}
+		}
+	}
+}

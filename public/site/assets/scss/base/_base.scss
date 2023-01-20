@@ -1,0 +1,157 @@
+@import './variables';
+@import './breakpoints';
+
+//
+// Base
+//-------------------------
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+:root {
+	--color-gray-dark: #606060;
+	--color-gray: #b0b0b0;
+	--color-gray-light: #e0e0e0;
+
+	--color-white-dark: #f9f9f9;
+	--color-white: #fff;
+
+	--color-black: #222222;
+	--color-black-light: #333333;
+
+	--color-border: #d6d6d6;
+
+	--color-danger: #ff0000;
+	--color-success: #00b300;
+	--color-warning: #f9ce5c;
+}
+
+//selection style
+// ::-moz-selection {
+// 	color: var(--color-primary);
+// 	background: var(--color-primary-light);
+// }
+
+// ::selection {
+// 	color: var(--color-primary);
+// 	background: var(--color-primary-light);
+// }
+
+body {
+	overflow-x: hidden !important;
+	overflow-y: auto;
+	@include font-regular;
+	padding-top: 60px;
+	min-height: 100vh;
+
+	//page scrollbar
+	&::-webkit-scrollbar {
+		width: 3px;
+		border-radius: 3px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--color-gray);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--color-black-light);
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-top: 63px;
+	}
+
+	&.is-sticked {
+		padding-top: 271px;
+	}
+}
+
+h1,
+.h1 {
+	font-size: $g-font-size-h1;
+}
+
+h2,
+.h2 {
+	font-size: $g-font-size-h2;
+}
+
+h3,
+.h3 {
+	font-size: $g-font-size-h3;
+}
+
+h4,
+.h4 {
+	font-size: $g-font-size-h4;
+}
+
+h5,
+.h5 {
+	font-size: $g-font-size-h5;
+}
+
+h6,
+.h6 {
+	font-size: $g-font-size-h6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--color-black);
+	@include font-medium;
+	line-height: 1;
+}
+
+a {
+	text-decoration: none !important;
+	color: unset;
+
+	&:hover {
+		color: unset;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	h1,
+	.h1 {
+		font-size: $g-font-size-h2;
+	}
+
+	h2,
+	.h2 {
+		font-size: $g-font-size-h3;
+	}
+
+	h3,
+	.h3 {
+		font-size: $g-font-size-20 !important;
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	body {
+		min-height: calc(100vh - 60px);
+	}
+	h1,
+	.h1 {
+		font-size: $g-font-size-h3;
+	}
+
+	h2,
+	.h2 {
+		font-size: $g-font-size-h4;
+	}
+}
+
+// @media (-moz-os-version: windows-xp), (-moz-os-version: windows-vista), (-moz-os-version: windows-win7), (-moz-os-version: windows-win8) {
+// 	body {
+// 		background-color: red;
+// 	}
+// }

@@ -1,0 +1,160 @@
+.c-widget {
+	width: 100%;
+	display: flex;
+	height: 100%;
+
+	&__form {
+		background-color: var(--color-white);
+		width: 80%;
+		height: 100%;
+		border-start-start-radius: $g-border-radius-8;
+		border-end-start-radius: $g-border-radius-8;
+		padding: map-get($g-gaps, small) 22px;
+		display: flex;
+	}
+
+	&__item {
+		width: 17.5%;
+		height: 42px;
+
+		&:not(:first-child) {
+			margin-inline-start: map-get($g-gaps, xsmall);
+		}
+
+		&--wide {
+			width: 23.75%;
+		}
+	}
+
+	&__dropdown {
+		height: 100%;
+		background-color: var(--color-white-dark);
+		font-size: $g-font-size-13;
+		display: flex;
+		align-items: center;
+		border-radius: $g-border-radius-4;
+		position: relative;
+		cursor: pointer;
+
+		&.is-open {
+			.c-widget__dropdown-menu {
+				display: block;
+				top: 65px;
+			}
+
+			.dropdown-toggle {
+				&::after {
+					transform: rotate(-180deg);
+					transition: ease-in-out transform 0.2s;
+				}
+			}
+		}
+
+		.dropdown-toggle {
+			padding-inline-start: map-get($g-gaps, small);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+
+			&::after {
+				inset-inline-end: 16px !important;
+				width: 10px !important;
+				position: absolute;
+				height: 6px !important;
+				margin-top: 2px !important;
+				border: none !important;
+				background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.33028 1.03889C8.37342 1.00034 8.42457 0.969815 8.48082 0.949058C8.53706 0.928301 8.5973 0.917717 8.65809 0.91791C8.71888 0.918104 8.77903 0.929071 8.83512 0.950185C8.8912 0.971299 8.94211 1.00215 8.98494 1.04097C9.02778 1.07979 9.06169 1.12582 9.08476 1.17644C9.10782 1.22706 9.11958 1.28127 9.11937 1.33598C9.11915 1.39068 9.10697 1.44482 9.08351 1.49529C9.06004 1.54576 9.02577 1.59157 8.98263 1.63012L5.28137 4.96101C5.19468 5.03856 5.07742 5.08209 4.95519 5.08209C4.83297 5.08209 4.71571 5.03856 4.62902 4.96101L0.92776 1.63012C0.884622 1.59157 0.850344 1.54576 0.826882 1.49529C0.80342 1.44482 0.791233 1.39068 0.791019 1.33598C0.790804 1.28127 0.802565 1.22706 0.82563 1.17644C0.848695 1.12582 0.882613 1.07979 0.925447 1.04097C0.96828 1.00215 1.01919 0.971299 1.07527 0.950185C1.13135 0.929071 1.19151 0.918104 1.2523 0.91791C1.31309 0.917717 1.37333 0.928301 1.42957 0.949058C1.48582 0.969815 1.53697 1.00034 1.58011 1.03889L4.95288 4.07416L8.33028 1.03889Z' fill='black'/%3E%3C/svg%3E%0A");
+				background-repeat: no-repeat;
+				transform: rotate(0deg);
+				transition: ease-in-out transform 0.2s;
+			}
+		}
+
+		&-menu {
+			background-color: var(--color-white) !important;
+			color: var(--color-black);
+			@include font-regular;
+			font-size: $g-font-size-13;
+			border: 1px solid var(--color-white-dark) !important;
+			box-shadow: $-g-dropdown-shadow;
+			padding: map-get($g-gaps, medium);
+			border-radius: $g-border-radius-8 !important;
+			top: 24px;
+			width: 280px !important;
+		}
+
+		&-title {
+			@include font-regular;
+			margin-bottom: map-get($g-gaps, xsmall);
+			text-align: start;
+		}
+
+		&-data {
+			font-size: $g-font-size-13;
+			color: var(--color-gray-dark);
+			margin-bottom: map-get($g-gaps, normal);
+			text-align: start;
+			display: flex;
+
+			span {
+				&:not(:first-child) {
+					margin-inline-start: map-get($g-gaps, 2xsmall);
+				}
+			}
+		}
+	}
+
+	&__button {
+		background-color: var(--color-black);
+		width: 20%;
+		height: 100%;
+		border-end-end-radius: $g-border-radius-8;
+		border-start-end-radius: $g-border-radius-8;
+		color: var(--color-white);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: map-get($g-gaps, small);
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--color-black-light);
+		}
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.c-widget {
+		flex-direction: column;
+
+		&__form {
+			flex-direction: column;
+			width: 100%;
+			border-radius: $g-border-radius-8 $g-border-radius-8 0 0;
+		}
+
+		&__item {
+			margin-inline-start: 0 !important;
+			width: 100%;
+
+			&:not(:first-child) {
+				margin-top: map-get($g-gaps, xsmall);
+			}
+		}
+
+		&__dropdown {
+			&.is-open {
+				.c-widget__dropdown-menu {
+					top: 40px;
+					width: 100% !important;
+				}
+			}
+		}
+
+		&__button {
+			width: 100%;
+			border-radius: 0 0 $g-border-radius-8 $g-border-radius-8;
+		}
+	}
+}

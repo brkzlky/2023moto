@@ -1,0 +1,25 @@
+<?php 
+
+return [
+    'list_title' => 'My Listings',
+    'detail_title' => 'Listing Detail',
+    'detail_title_desc' => 'The credit will be shared with the account to be allocated, to be used at will be used at will be used for the submission of your application for personal use and for alternative purchases.',
+    'about_vehicle' => 'About your vehicle',
+    'about_vehicle_desc' => 'The credit will be shared with the account to be allocated, to be used at will be used at will be used for the submission of your application for personal use and for alternative purchases.',
+    'listing_title_placeholder' => 'Type your listing title',
+    'total_listing' => 'Total Listings',
+    'active_listings' => 'Active Listings',
+    'passive_listings' => 'Passive Listings',
+    'draft_listings' => 'Draft Listings',
+    'all_listings' => 'All',
+    'active_passive' => 'Active / Passive',
+    'faved_listings' => 'Total Faved',
+    'total_views' => 'Total Views',
+    'add_listing' => 'Add New Listing',
+    'create_listing_title' => 'What are you listing today?',
+    'create_listing_desc' => 'The credit will be shared with the account to be allocated, to be used at will be used at will be used for the submission of your application for personal use and for alternative purchases.',
+    'what_do_you_want' => 'What do you want to do?',
+    'what_do_you_want_desc' => 'The credit will be shared with the account to be allocated, to be used at will be used at will be used for the submission of your application for personal use and for alternative purchases.',
+    'want_to_rent' => "I want to rent",
+    'want_to_sell' => "I want to sell",
+];

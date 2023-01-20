@@ -1,0 +1,91 @@
+.c-checkbox {
+	&[type='checkbox']:checked,
+	&[type='checkbox']:not(:checked) {
+		position: absolute;
+		inset-inline-start: -9999px;
+	}
+
+	&[type='checkbox']:checked + label,
+	&[type='checkbox']:not(:checked) + label {
+		position: relative;
+		padding-inline-start: map-get($g-gaps, normal);
+		cursor: pointer;
+		line-height: 17px;
+		display: inline-block;
+		color: var(--color-black);
+		font-size: $g-font-size-13;
+		@include font-regular;
+		margin-bottom: 0;
+
+		a {
+			color: var(--color-white);
+			text-decoration: underline !important;
+		}
+	}
+
+	&[type='checkbox']:checked + label:before,
+	&[type='checkbox']:not(:checked) + label:before {
+		content: '';
+		position: absolute;
+		inset-inline-start: 0;
+		top: 0;
+		width: 15px;
+		height: 15px;
+		border: 1px solid var(--color-gray-light);
+		border-radius: 3px;
+		transition: all 0.2s ease;
+		background-color: var(--color-white);
+	}
+
+	&[type='checkbox']:checked + label:before {
+		border: 1px solid var(--color-black) !important;
+		background: var(--color-black);
+	}
+
+	&[type='checkbox']:checked + label:after,
+	&[type='checkbox']:not(:checked) + label:after {
+		content: '';
+		width: 10px;
+		height: 10px;
+		background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.27778L4.70588 7L10.5 0.5' stroke='white'/%3E%3C/svg%3E%0A");
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 3px;
+		inset-inline-start: 2px;
+		border-radius: 2px;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+	}
+
+	&[type='checkbox']:not(:checked) + label:after {
+		opacity: 0;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	&[type='checkbox']:checked + label:after {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	&--filter {
+		&[type='checkbox']:checked + label,
+		&[type='checkbox']:not(:checked) + label {
+			font-size: $g-font-size-12;
+		}
+
+		&[type='checkbox']:not(:checked) + label:before {
+			background-color: var(--color-white);
+		}
+	}
+}
+
+html[dir='rtl'] {
+	.c-checkbox {
+		&[type='checkbox']:checked + label:after,
+		&[type='checkbox']:not(:checked) + label:after {
+			inset-inline-start: 3px;
+		}
+	}
+}
